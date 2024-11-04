@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "baseUrl": "."
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
