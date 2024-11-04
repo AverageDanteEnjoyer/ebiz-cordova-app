@@ -1,0 +1,190 @@
+{
+  "store": {
+    "buy": "Buy"
+  },
+  "home": {
+    "siteTitle": "Recipedia",
+    "viewRecipes": "View Recipes",
+    "addRecipe": "Add Recipe",
+    "welcomeMessage": "Welcome to Recipedia!",
+    "homeDescription": "Find and share everyday cooking inspiration on Recipedia",
+    "featuredRecipe": "Featured Recipe",
+    "featuredRecipeDescription": "Check out our featured recipe of the day!",
+    "viewRecipe": "View Recipe",
+    "whyChooseUs": "Why Choose Us?",
+    "feature1Title": "Variety of Recipes",
+    "feature1Description": "Explore a wide range of recipes from different cuisines.",
+    "feature2Title": "Easy to Follow",
+    "feature2Description": "Step-by-step instructions to make cooking easy and fun.",
+    "feature3Title": "Community Driven",
+    "feature3Description": "Share your own recipes and connect with fellow food enthusiasts.",
+    "ctaTitle": "Start Cooking Today!",
+    "ctaDescription": "Join our community and start sharing your own recipes.",
+    "ctaButton": "Add Your Recipe"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, pl {🇵🇱 Polski} en {🇺🇸 English} other {Unknown}}"
+  },
+  "profile": {
+    "editProfile": "Edit Profile",
+    "saveChanges": "Save Changes",
+    "error": {
+      "loading": "Error loading profile",
+      "imageRequired": "Profile image is required"
+    },
+    "edit": {
+      "updatingProfile": "Updating profile...",
+      "profileUpdated": "Profile updated successfully",
+      "failedToUpdateProfile": "Failed to update profile"
+    },
+    "generalError": "Something went wrong, try again later"
+  },
+  "sidebar": {
+    "store": "Store",
+    "home": "Home",
+    "profile": "My profile",
+    "recipes": "Recipes",
+    "recipe": "Recipe",
+    "addRecipe": "Add Recipe",
+    "editRecipe": "Edit Recipe",
+    "login": "Log in",
+    "register": "Create an account",
+    "logout": {
+      "title": "Log out",
+      "loading": "Logging out...",
+      "success": "Logged out successfully",
+      "error": "Error logging out"
+    }
+  },
+  "auth": {
+    "email": "Email",
+    "emailDescription": "Email is used for login",
+    "password": "Password",
+    "passwordDescription": "Don't use a password from another site or something too obvious.",
+    "firstName": "First name",
+    "firstNameDescription": "Your first name will be visible to other users.",
+    "lastName": "Last name",
+    "lastNameDescription": "Your last name will be visible to other users.",
+    "bio": "Bio",
+    "bioDescription": "Tell us something about yourself",
+    "changePasswordDescription": "If you want to change your password, enter a new one",
+    "image": "Profile picture",
+    "imageDescription": "Profile picture will be displayed on your profile page",
+    "alreadyHaveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "generalError": "Something went wrong. Please try again later",
+    "register": {
+      "title": "Create an account",
+      "submit": "Sign up",
+      "loading": "Creating account...",
+      "error": "Error creating account",
+      "success": "Account created successfully"
+    },
+    "login": {
+      "title": "Log in to your account",
+      "submit": "Log In",
+      "loading": "Logging in...",
+      "error": "Invalid email or password",
+      "success": "Logged in successfully"
+    },
+    "errors": {
+      "email": "Invalid email",
+      "emailTaken": "Email is already taken",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least {minLength} characters",
+      "passwordComplexity": "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character",
+      "firstNameMinLength": "First name must be at least {minLength} characters",
+      "firstNameAlphabet": "First name must contain only alphabetic characters",
+      "lastNameMinLength": "Last name must be at least {minLength} characters",
+      "lastNameAlphabet": "Last name must contain only alphabetic characters",
+      "bioMaxLength": "Biografia nie może przekraczać {maxLength} znaków"
+    }
+  },
+  "recipe": {
+    "generalError": "Something went wrong, try again later",
+    "fields": {
+      "name": "Name",
+      "nameDescription": "Users will be able to find the recipe by name",
+      "description": "Description",
+      "descriptionDescription": "The description will appear under the recipe name and on the recipe list page",
+      "image": "Food image",
+      "imageDescription": "Food image will be displayed on the recipe page",
+      "ingredients": "Ingredients",
+      "ingredientsDescription": "Provide all the ingredients needed to prepare the recipe",
+      "instructions": "Step by step preparation",
+      "instructionsDescription": "Detailed instructions for preparing the recipe"
+    },
+    "create": {
+      "title": "Add a recipe",
+      "submit": "Add a recipe",
+      "loading": "Adding a recipe...",
+      "error": "Adding a recipe failed",
+      "success": "Recipe added successfully"
+    },
+    "errors": {
+      "nameRequired": "Recipe name is required",
+      "descriptionRequired": "Recipe description is required",
+      "ingredientsRequired": "Recipe ingredients are required",
+      "instructionsRequired": "Recipe instructions are required",
+      "createFailed": "Adding a recipe failed",
+      "imageRequired": "Recipe image is required"
+    },
+    "list": {
+      "title": "Recipes",
+      "loading": "Loading recipes...",
+      "error": "Failed to load recipes",
+      "filterByName": "Search by name",
+      "elementsPerPage": "Recipes per page"
+    },
+    "update": {
+      "title": "Edit recipe",
+      "submit": "Update recipe",
+      "loading": "Updating recipe...",
+      "error": "Failed to update recipe",
+      "success": "Recipe updated successfully"
+    },
+    "createRecipe": "Add a recipe",
+    "details": {
+      "print": "Print",
+      "edit": "Edit",
+      "delete": "Delete",
+      "loginToComment": "Log in to add a comment",
+      "ratings": "{avgRating} based on {count} ratings",
+      "by": "by",
+      "ingredients": "Ingredients",
+      "instructions": "Preparation step by step",
+      "comments": "Comments",
+      "loading": "Loading recipe details...",
+      "error": {
+        "loading": "Error loading recipe details",
+        "notFound": "Recipe not found"
+      },
+      "addComment": "Add a Comment",
+      "comment": "Comment",
+      "rating": "Rating",
+      "submit": "Submit",
+      "noComments": "No comments yet",
+      "fields": {
+        "comment": "Comment",
+        "rating": "Rating"
+      },
+      "errors": {
+        "commentRequired": "Comment is required",
+        "ratingRequired": "Rating is required",
+        "commentFailed": "Failed to add comment",
+        "commentDeleteFailed": "Failed to delete comment",
+        "recipeDeleteFailed": "Failed to delete recipe"
+      },
+      "success": {
+        "commentDeleted": "Comment deleted successfully",
+        "recipeDeleted": "Recipe deleted successfully",
+        "commentAdded": "Comment added successfully"
+      }
+    }
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

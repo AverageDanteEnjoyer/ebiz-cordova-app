@@ -1,0 +1,192 @@
+{
+  "store": {
+    "buy": "Kup",
+    "recipeBook": "Książka kucharska",
+    "tshirt": "Koszulka"
+  },
+  "home": {
+    "siteTitle": "Recipedia",
+    "viewRecipes": "Zobacz przepisy",
+    "addRecipe": "Dodaj przepis",
+    "welcomeMessage": "Witamy na Recipedii!",
+    "homeDescription": "Znajdź i podziel się codzienną inspiracją kulinarną na Recipedii",
+    "featuredRecipe": "Polecany przepis",
+    "featuredRecipeDescription": "Sprawdź nasz polecany przepis dnia!",
+    "viewRecipe": "Zobacz przepis",
+    "whyChooseUs": "Dlaczego my?",
+    "feature1Title": "Różnorodność przepisów",
+    "feature1Description": "Odkryj szeroką gamę przepisów z różnych kuchni.",
+    "feature2Title": "Łatwe do wykonania",
+    "feature2Description": "Krok po kroku instrukcje, aby gotowanie było łatwe i przyjemne.",
+    "feature3Title": "Społeczność",
+    "feature3Description": "Podziel się własnymi przepisami i połącz się z innymi miłośnikami gotowania.",
+    "ctaTitle": "Zacznij gotować już dziś!",
+    "ctaDescription": "Dołącz do naszej społeczności i zacznij dzielić się własnymi przepisami.",
+    "ctaButton": "Dodaj swój przepis"
+  },
+  "LocaleSwitcher": {
+    "label": "Zmień język",
+    "locale": "{locale, select, pl {🇵🇱 Polski} en {🇺🇸 English} other {Unknown}}"
+  },
+  "profile": {
+    "editProfile": "Edytuj profil",
+    "saveChanges": "Zapisz zmiany",
+    "error": {
+      "loading": "Błąd ładowania profilu",
+      "imageRequired": "Profile image is required"
+    },
+    "edit": {
+      "updatingProfile": "Aktualizowanie profilu...",
+      "profileUpdated": "Profil zaktualizowany pomyślnie",
+      "failedToUpdateProfile": "Aktualizacja profilu nie powiodła się"
+    },
+    "generalError": "Coś poszło nie tak, spróbuj ponownie później"
+  },
+  "sidebar": {
+    "store": "Sklep",
+    "home": "Strona główna",
+    "profile": "Mój profil",
+    "recipes": "Przepisy",
+    "recipe": "Przepis",
+    "addRecipe": "Dodaj przepis",
+    "editRecipe": "Edytuj przepis",
+    "login": "Zaloguj się",
+    "register": "Utwórz konto",
+    "logout": {
+      "title": "Wyloguj się",
+      "loading": "Wylogowywanie...",
+      "success": "Wylogowano pomyślnie",
+      "error": "Wylogowanie nie powiodło się"
+    }
+  },
+  "auth": {
+    "email": "Email",
+    "emailDescription": "Email będzie używany do logowania",
+    "password": "Hasło",
+    "passwordDescription": "Nie używaj hasła z innego serwisu lub czegoś zbyt oczywistego.",
+    "firstName": "Imię",
+    "firstNameDescription": "Twoje imię będzie widoczne dla innych użytkowników",
+    "lastName": "Nazwisko",
+    "lastNameDescription": "Twoje nazwisko będzie widoczne dla innych użytkowników",
+    "bio": "Biografia",
+    "bioDescription": "Opowiedz nam coś o sobie",
+    "changePasswordDescription": "Jeśli nie chcesz zmieniać hasła, pozostaw to pole puste",
+    "image": "Zdjęcie profilowe",
+    "imageDescription": "Zdjęcie profilowe ułatwi innym użytkownikom rozpoznanie Ciebie",
+    "alreadyHaveAccount": "Masz już konto?",
+    "noAccount": "Nie masz konta?",
+    "generalError": "Coś poszło nie tak, spróbuj ponownie później",
+    "register": {
+      "title": "Dołącz do nas!",
+      "submit": "Zarejestruj się",
+      "loading": "Rejestracja...",
+      "error": "Rejestracja nie powiodła się",
+      "success": "Rejestracja zakończona sukcesem"
+    },
+    "login": {
+      "title": "Panel logowania",
+      "submit": "Zaloguj się",
+      "loading": "Logowanie...",
+      "error": "Nieprawidłowy email lub hasło",
+      "success": "Zalogowano pomyślnie"
+    },
+    "errors": {
+      "email": "Niepoprawny adres email",
+      "emailTaken": "Email jest już zajęty",
+      "passwordRequired": "Hasło jest wymagane",
+      "passwordMinLength": "Hasło musi mieć co najmniej {minLength} znaków",
+      "passwordComplexity": "Hasło musi zawierać co najmniej jedną dużą literę, jedną małą literę, jedną cyfrę i jeden znak specjalny",
+      "firstNameMinLength": "Imię musi mieć co najmniej {minLength} znaków",
+      "firstNameAlphabet": "Imię musi składać się tylko z liter",
+      "lastNameMinLength": "Nazwisko musi mieć co najmniej {minLength} znaki",
+      "lastNameAlphabet": "Nazwisko musi składać się tylko z liter",
+      "bioMaxLength": "Biografia nie może przekraczać {maxLength} znaków"
+    }
+  },
+  "recipe": {
+    "generalError": "Coś poszło nie tak, spróbuj ponownie później",
+    "fields": {
+      "name": "Nazwa",
+      "nameDescription": "Użytkownicy będą mogli znaleźć przepis po nazwie",
+      "description": "Opis",
+      "descriptionDescription": "Opis wyświetli się pod nazwą przepisu oraz na stronie z listą przepisów",
+      "image": "Zdjęcie potrawy",
+      "imageDescription": "Zdjęcie potrawy ułatwi użytkownikom znalezienie przepisu",
+      "ingredients": "Składniki",
+      "ingredientsDescription": "Podaj wszystkie składniki potrzebne do przygotowania przepisu",
+      "instructions": "Przygotowanie krok po kroku",
+      "instructionsDescription": "Szczegółowe instrukcje dotyczące przygotowania przepisu"
+    },
+    "create": {
+      "title": "Dodaj przepis",
+      "submit": "Dodaj przepis",
+      "loading": "Dodawanie przepisu...",
+      "error": "Dodawanie przepisu nie powiodło się",
+      "success": "Przepis dodany pomyślnie"
+    },
+    "errors": {
+      "nameRequired": "Nazwa przepisu jest wymagana",
+      "descriptionRequired": "Opis przepisu jest wymagany",
+      "ingredientsRequired": "Składniki przepisu są wymagane",
+      "instructionsRequired": "Instrukcje przepisu są wymagane",
+      "createFailed": "Dodawanie przepisu nie powiodło się",
+      "imageRequired": "Obraz przepisu jest wymagany"
+    },
+    "list": {
+      "title": "Przepisy",
+      "loading": "Ładowanie przepisów...",
+      "error": "Nie udało się załadować przepisów",
+      "filterByName": "Szukaj po nazwie",
+      "elementsPerPage": "Przepisów na stronie"
+    },
+    "update": {
+      "title": "Edytuj przepis",
+      "submit": "Zapisz zmiany",
+      "loading": "Aktualizowanie przepisu...",
+      "error": "Aktualizacja przepisu nie powiodła się",
+      "success": "Przepis zaktualizowany pomyślnie"
+    },
+    "createRecipe": "Dodaj przepis",
+    "details": {
+      "print": "Drukuj przepis",
+      "edit": "Edytuj przepis",
+      "delete": "Usuń przepis",
+      "loginToComment": "Zaloguj się, aby dodać komentarz",
+      "ratings": "{avgRating} z {count} ocen",
+      "by": "Autor:",
+      "ingredients": "Składniki",
+      "instructions": "Przygotowanie krok po kroku",
+      "comments": "Komentarze",
+      "loading": "Ładowanie szczegółów przepisu...",
+      "error": {
+        "loading": "Błąd ładowania szczegółów przepisu",
+        "notFound": "Przepis nie znaleziony"
+      },
+      "addComment": "Dodaj komentarz",
+      "comment": "Komentarz",
+      "rating": "Ocena",
+      "submit": "Wyślij",
+      "noComments": "Brak komentarzy",
+      "fields": {
+        "comment": "Komentarz",
+        "rating": "Ocena"
+      },
+      "errors": {
+        "commentRequired": "Komentarz jest wymagany",
+        "ratingRequired": "Ocena jest wymagana",
+        "commentFailed": "Nie udało się dodać komentarza",
+        "commentDeleteFailed": "Nie udało się usunąć komentarza",
+        "recipeDeleteFailed": "Nie udało się usunąć przepisu"
+      },
+      "success": {
+        "commentDeleted": "Komentarz usunięty pomyślnie",
+        "recipeDeleted": "Przepis usunięty pomyślnie",
+        "commentAdded": "Komentarz dodany pomyślnie"
+      }
+    }
+  },
+  "pagination": {
+    "previous": "Poprzednia",
+    "next": "Następna"
+  }
+}
