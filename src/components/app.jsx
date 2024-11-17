@@ -59,6 +59,15 @@ const MyApp = () => {
             androidOverlaysWebView: false,
         },
     };
+
+    const clearRegisterData = () => {
+        setEmail('');
+        setPassword('');
+        setPasswordConfirm('');
+        setFirstName('');
+        setLastName('');
+    }
+
     const alertLoginData = async () => {
         if (!email || !password) {
             f7.dialog.alert('Username and password are required');
@@ -86,6 +95,7 @@ const MyApp = () => {
                 }
                 const data = await resp.json();
                 await store.dispatch('login', data);
+                clearRegisterData();
                 f7.loginScreen.close();
             }).catch((error) => {
                 console.log(error);
@@ -124,8 +134,7 @@ const MyApp = () => {
                 } else if (resp.status !== 200) {
                     throw new Error('Error status: ' + resp.status);
                 }
-                const data = await resp.json();
-                await store.dispatch('login', data);
+                clearRegisterData();
                 f7.dialog.alert('Registration successful. Redirecting to login screen.');
                 f7.loginScreen.close();
                 f7.loginScreen.open('#login-screen');
@@ -169,8 +178,9 @@ const MyApp = () => {
                         <Block>
                             <Button fill onClick={
                                 () => {
-                                    store.dispatch('logout').then(
+                                    store.dispatch('logout', null).then(
                                         () => {
+                                            clearRegisterData();
                                             f7.dialog.alert('Logout successful');
                                             f7.loginScreen.open('#login-screen');
                                         }
