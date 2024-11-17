@@ -19,7 +19,7 @@ import {
     List,
     ListInput,
     ListButton,
-    BlockFooter
+    BlockFooter, Button
 } from 'framework7-react';
 import cordovaApp from '../js/cordova-app';
 
@@ -33,6 +33,9 @@ const MyApp = () => {
     // Login screen demo data
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const device = getDevice();
 
     const isAuthenticated = store.getters.isAuthenticated.value;
@@ -77,24 +80,64 @@ const MyApp = () => {
             }).then(async (resp) => {
                 if (resp.status === 401) {
                     f7.dialog.alert('Invalid email or password');
-                    throw new Error('Unauthorized: ' + resp.status);
+                    return;
+                } else if (resp.status !== 200) {
+                    throw new Error('Error status: ' + resp.status);
                 }
                 const data = await resp.json();
                 await store.dispatch('login', data);
-                f7.dialog.alert('Login successful');
                 f7.loginScreen.close();
             }).catch((error) => {
                 console.log(error);
-                if (error.message === 'Unauthorized') {
+                f7.dialog.alert('An error occurred. Please try again later.');
+            });
+        }
+    }
+    const alertRegisterData = async () => {
+        if (!email || !password || !passwordConfirm || !firstName || !lastName) {
+            f7.dialog.alert('All fields are required');
+            return;
+        }
+
+        const errors = passwordValidator(password);
+
+        if (password !== passwordConfirm) {
+            f7.dialog.alert('Passwords do not match');
+            return;
+        }
+        if (!email.match(/[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/)) {
+            f7.dialog.alert('Invalid email address');
+            return;
+        }
+        if (errors.length > 0) {
+            f7.dialog.alert('Password must<br>' + errors.join('<br />'));
+        } else {
+            await api.post("/auth/register", {
+                email,
+                password,
+                firstName,
+                lastName
+            }).then(async (resp) => {
+                if (resp.status === 400) {
+                    f7.dialog.alert('Email already exists');
                     return;
+                } else if (resp.status !== 200) {
+                    throw new Error('Error status: ' + resp.status);
                 }
-                f7.dialog.alert('An error occurred. Please try again later: ' + error.message);
+                const data = await resp.json();
+                await store.dispatch('login', data);
+                f7.dialog.alert('Registration successful. Redirecting to login screen.');
+                f7.loginScreen.close();
+                f7.loginScreen.open('#login-screen');
+            }).catch((error) => {
+                console.log(error);
+                f7.dialog.alert('An error occurred. Please try again later.');
             });
         }
     }
     f7ready(() => {
         if (!isAuthenticated) {
-            f7.loginScreen.open('#my-login-screen');
+            f7.loginScreen.open('#login-screen');
         }
         // Init cordova APIs (see cordova-app.js)
         if (f7.device.cordova) {
@@ -123,7 +166,23 @@ const MyApp = () => {
                 <View>
                     <Page>
                         <Navbar title="Right Panel"/>
-                        <Block>Right panel content goes here</Block>
+                        <Block>
+                            <Button fill onClick={
+                                () => {
+                                    store.dispatch('logout').then(
+                                        () => {
+                                            f7.dialog.alert('Logout successful');
+                                            f7.loginScreen.open('#login-screen');
+                                        }
+                                    ).catch(
+                                        (error) => {
+                                            console.log(error);
+                                            f7.dialog.alert('We cannot log you out at this time. Please try again later.');
+                                        }
+                                    );
+                                }
+                            }>Logout</Button>
+                        </Block>
                     </Page>
                 </View>
             </Panel>
@@ -168,7 +227,7 @@ const MyApp = () => {
             </Popup>
 
             {/* Login Screen */}
-            <LoginScreen id="my-login-screen">
+            <LoginScreen id="login-screen">
                 <View>
                     <Page loginScreen>
                         <LoginScreenTitle>Login</LoginScreenTitle>
@@ -191,13 +250,76 @@ const MyApp = () => {
                         <List>
                             <ListButton title="Sign In" onClick={() => alertLoginData()}/>
                             <BlockFooter>
-                                Some text about login information.<br/>Click "Sign In" to close Login Screen
+                                If you do not have an account, you can click the button below to create one.
+                                <Button onClick={() => {
+                                    f7.loginScreen.close('#login-screen');
+                                    f7.loginScreen.open('#register-screen');
+                                }}>
+                                    Create Account
+                                </Button>
                             </BlockFooter>
                         </List>
                     </Page>
                 </View>
             </LoginScreen>
 
+            {/* Register Screen */}
+            <LoginScreen id="register-screen">
+                <View>
+                    <Page loginScreen>
+                        <LoginScreenTitle>Registration</LoginScreenTitle>
+                        <List form>
+                            <ListInput
+                                type="text"
+                                name="email"
+                                placeholder="Your email"
+                                value={email}
+                                onInput={(e) => setEmail(e.target.value)}
+                            ></ListInput>
+                            <ListInput
+                                type="password"
+                                name="password"
+                                placeholder="Your password"
+                                value={password}
+                                onInput={(e) => setPassword(e.target.value)}
+                            ></ListInput>
+                            <ListInput
+                                type="password"
+                                name="passwordConfirm"
+                                placeholder="Confirm password"
+                                value={passwordConfirm}
+                                onInput={(e) => setPasswordConfirm(e.target.value)}
+                            ></ListInput>
+                            <ListInput
+                                type="text"
+                                name="firstName"
+                                placeholder="First name"
+                                value={firstName}
+                                onInput={(e) => setFirstName(e.target.value)}
+                            ></ListInput>
+                            <ListInput
+                                type="text"
+                                name="lastName"
+                                placeholder="Last name"
+                                value={lastName}
+                                onInput={(e) => setLastName(e.target.value)}
+                            ></ListInput>
+                        </List>
+                        <List>
+                            <ListButton title="Sign Up" onClick={() => alertRegisterData()}/>
+                            <BlockFooter>
+                                If you have an account, you can click the button below to login.
+                                <Button onClick={() => {
+                                    f7.loginScreen.close('#register-screen');
+                                    f7.loginScreen.open('#login-screen');
+                                }}>
+                                    Login
+                                </Button>
+                            </BlockFooter>
+                        </List>
+                    </Page>
+                </View>
+            </LoginScreen>
         </App>
     )
 }

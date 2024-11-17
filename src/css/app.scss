@@ -8,4 +8,8 @@
   line-height: 2; /* Ustawia odstęp między wierszami */
 }
 
+::marker {
+  display: none;
+}
+
 /* Your app custom styles here */

@@ -1,4 +1,5 @@
-export const baseURL = "http://10.0.2.2:8080";
+export const baseURL = "http://10.0.2.2:8080"; // For Android Emulator
+// export const baseURL = "http://localhost:8080"; // For Browser
 export const staticURL = `${baseURL}/static`;
 export const ApiURL = `${baseURL}/api/v1`;
 
