@@ -19,16 +19,38 @@ const store = createStore({
         title: 'Apple iPhone X',
         description: 'Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum.'
       },
-    ]
+    ],
+    user: sessionStorage.getItem('user'),
+    orders: [],
   },
   getters: {
     products({ state }) {
       return state.products;
-    }
+    },
+    user({ state }) {
+      return state.user;
+    },
+    isAuthenticated({ state }) {
+      return !!state.user;
+    },
+    orders({ state }) {
+      return state.orders;
+    },
   },
   actions: {
     addProduct({ state }, product) {
       state.products = [...state.products, product];
+    },
+    login({ state }, userData) {
+      state.user = userData;
+      sessionStorage.setItem('user', JSON.stringify(userData));
+    },
+    logout({ state }) {
+      state.user = null;
+      sessionStorage.removeItem('user');
+    },
+    addOrder({ state }, order) {
+      state.orders = [...state.orders, order];
     },
   },
 })

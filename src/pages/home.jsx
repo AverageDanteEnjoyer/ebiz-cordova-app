@@ -7,7 +7,6 @@ import {
   NavTitleLarge,
   NavRight,
   Link,
-  Toolbar,
   Block,
   BlockTitle,
   List,
@@ -42,9 +41,8 @@ const HomePage = () => (
     </List>
 
     <BlockTitle>Modals</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
+    <Block className="grid grid-gap">
       <Button fill popupOpen="#my-popup">Popup</Button>
-      <Button fill loginScreenOpen="#my-login-screen">Login Screen</Button>
     </Block>
 
     <BlockTitle>Panels</BlockTitle>
