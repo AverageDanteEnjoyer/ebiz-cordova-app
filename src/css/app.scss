@@ -1,0 +1,15 @@
+/* iOS Cordova Tweak */
+.device-cordova.device-ios {
+  height: 100vh;
+}
+
+.list .item-input .item-input-error-message {
+  white-space: normal; /* Zezwala na automatyczne zawijanie tekstu */
+  line-height: 2; /* Ustawia odstęp między wierszami */
+}
+
+::marker {
+  display: none;
+}
+
+/* Your app custom styles here */

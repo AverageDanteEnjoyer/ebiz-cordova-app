@@ -1,6 +1,6 @@
 {
-  "name": "io.cordova.hellocordova",
-  "displayName": "HelloCordova",
+  "name": "pl.cinemanow",
+  "displayName": "CinemaNow",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
@@ -13,9 +13,15 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "cordova-android": "^13.0.0"
+    "cordova-android": "^13.0.0",
+    "cordova-plugin-keyboard": "^1.2.0",
+    "cordova-plugin-statusbar": "^4.0.0"
   },
   "cordova": {
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-keyboard": {}
+    },
     "platforms": [
       "android"
     ]
