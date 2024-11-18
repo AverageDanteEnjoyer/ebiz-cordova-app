@@ -1,4 +1,3 @@
-
 import HomePage from '../pages/home.jsx';
 import AboutPage from '../pages/about.jsx';
 import FormPage from '../pages/form.jsx';
@@ -9,11 +8,21 @@ import SettingsPage from '../pages/settings.jsx';
 import DynamicRoutePage from '../pages/dynamic-route.jsx';
 import RequestAndLoad from '../pages/request-and-load.jsx';
 import NotFoundPage from '../pages/404.jsx';
+import LoginPage from '@/pages/login';
+import RegisterPage from '@/pages/register';
 
-var routes = [
+const routes = [
   {
     path: '/',
     component: HomePage,
+  },
+  {
+    path: '/login',
+    component: LoginPage,
+  },
+  {
+    path: '/register',
+    component: RegisterPage,
   },
   {
     path: '/about/',
