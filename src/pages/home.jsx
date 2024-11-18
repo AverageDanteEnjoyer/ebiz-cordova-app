@@ -2,7 +2,6 @@ import React from "react";
 import {
   Page,
   Navbar,
-  NavLeft,
   NavTitle,
   NavTitleLarge,
   NavRight,
@@ -17,11 +16,7 @@ import {
 
 const HomePage = () => (
   <Page name="home">
-    {/* Top Navbar */}
     <Navbar large sliding={false}>
-      <NavLeft>
-        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="left" />
-      </NavLeft>
       <NavTitle sliding>CinemaNow</NavTitle>
       <NavRight>
         <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right" />
@@ -29,7 +24,6 @@ const HomePage = () => (
       <NavTitleLarge>CinemaNow</NavTitleLarge>
     </Navbar>
 
-    {/* Page content */}
     <Block>
       <p style={{ textAlign: "justify" }}>
         Step into the world of unforgettable stories and stunning visuals with
@@ -65,41 +59,10 @@ const HomePage = () => (
     </Block>
 
     <Block>
-      <Button iconMaterial="videocam" fill round raised>
+      <Button iconMaterial="videocam" href="/films/" fill round raised>
         Explore now
       </Button>
     </Block>
-    {/* <BlockTitle>Modals</BlockTitle>
-    <Block className="grid grid-gap">
-      <Button fill popupOpen="#my-popup">
-        Popup
-      </Button>
-    </Block> */}
-
-    {/* <BlockTitle>Panels</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
-      <Button fill panelOpen="left">
-        Left Panel
-      </Button>
-      <Button fill panelOpen="right">
-        Right Panel
-      </Button>
-    </Block>
-
-    <List strong inset dividersIos>
-      <ListItem
-        title="Dynamic (Component) Route"
-        link="/dynamic-route/blog/45/post/125/?foo=bar#about"
-      />
-      <ListItem
-        title="Default Route (404)"
-        link="/load-something-that-doesnt-exist/"
-      />
-      <ListItem
-        title="Request Data & Load"
-        link="/request-and-load/user/123456/"
-      />
-    </List> */}
   </Page>
 );
 export default HomePage;
