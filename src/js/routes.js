@@ -1,56 +1,56 @@
-import HomePage from '../pages/home.jsx';
-import AboutPage from '../pages/about.jsx';
-import FormPage from '../pages/form.jsx';
-import CatalogPage from '../pages/catalog.jsx';
-import ProductPage from '../pages/product.jsx';
-import SettingsPage from '../pages/settings.jsx';
+import HomePage from "../pages/home.jsx";
+import AboutPage from "../pages/about.jsx";
+import FormPage from "../pages/form.jsx";
+import FilmPage from "../pages/film.jsx";
+import SettingsPage from "../pages/settings.jsx";
 
-import DynamicRoutePage from '../pages/dynamic-route.jsx';
-import RequestAndLoad from '../pages/request-and-load.jsx';
-import NotFoundPage from '../pages/404.jsx';
-import LoginPage from '@/pages/login';
-import RegisterPage from '@/pages/register';
+import DynamicRoutePage from "../pages/dynamic-route.jsx";
+import RequestAndLoad from "../pages/request-and-load.jsx";
+import NotFoundPage from "../pages/404.jsx";
+import LoginPage from "@/pages/login";
+import RegisterPage from "@/pages/register";
+import FilmsPage from "../pages/films.jsx";
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     component: HomePage,
   },
   {
-    path: '/login',
+    path: "/login",
     component: LoginPage,
   },
   {
-    path: '/register',
+    path: "/register",
     component: RegisterPage,
   },
   {
-    path: '/about/',
+    path: "/about/",
     component: AboutPage,
   },
   {
-    path: '/form/',
+    path: "/form/",
     component: FormPage,
   },
   {
-    path: '/catalog/',
-    component: CatalogPage,
+    path: "/films/",
+    component: FilmsPage,
   },
   {
-    path: '/product/:id/',
-    component: ProductPage,
+    path: "/films/:id",
+    component: FilmPage,
   },
   {
-    path: '/settings/',
+    path: "/settings/",
     component: SettingsPage,
   },
 
   {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
+    path: "/dynamic-route/blog/:blogId/post/:postId/",
     component: DynamicRoutePage,
   },
   {
-    path: '/request-and-load/user/:userId/',
+    path: "/request-and-load/user/:userId/",
     async: function ({ router, to, resolve }) {
       // App instance
       var app = router.app;
@@ -65,19 +65,19 @@ const routes = [
       setTimeout(function () {
         // We got user data from request
         var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
+          firstName: "Vladimir",
+          lastName: "Kharlampidi",
+          about: "Hello, i am creator of Framework7! Hope you like it!",
           links: [
             {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
+              title: "Framework7 Website",
+              url: "http://framework7.io",
             },
             {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
+              title: "Framework7 Forum",
+              url: "http://forum.framework7.io",
             },
-          ]
+          ],
         };
         // Hide Preloader
         app.preloader.hide();
@@ -90,14 +90,14 @@ const routes = [
           {
             props: {
               user: user,
-            }
+            },
           }
         );
       }, 1000);
     },
   },
   {
-    path: '(.*)',
+    path: "(.*)",
     component: NotFoundPage,
   },
 ];
