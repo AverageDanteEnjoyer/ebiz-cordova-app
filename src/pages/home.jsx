@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Page,
   Navbar,
@@ -11,8 +11,9 @@ import {
   BlockTitle,
   List,
   ListItem,
-  Button
-} from 'framework7-react';
+  Button,
+  Icon,
+} from "framework7-react";
 
 const HomePage = () => (
   <Page name="home">
@@ -30,25 +31,59 @@ const HomePage = () => (
 
     {/* Page content */}
     <Block>
-      <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
-
-      <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
+      <p style={{ textAlign: "justify" }}>
+        Step into the world of unforgettable stories and stunning visuals with
+        CinemaNow, the ultimate platform for film enthusiasts. Whether you're
+        craving timeless classics, indie gems, or the latest blockbusters,
+        CinemaNow brings the magic of the silver screen to your fingertips.
+      </p>
     </Block>
-    <BlockTitle>Navigation</BlockTitle>
-    <List strong inset dividersIos>
-      <ListItem link="/about/" title="About"/>
-      <ListItem link="/form/" title="Form"/>
+    <BlockTitle>Why Choose CinemaNow?</BlockTitle>
+    <List dividersIos dividers strong outline inset>
+      <ListItem title="Extensive Library">
+        <Icon slot="media" material="star"></Icon>
+      </ListItem>
+      <ListItem title="Instant Access">
+        <Icon slot="media" material="rocket_launch"></Icon>
+      </ListItem>
+      <ListItem title="HD Streaming">
+        <Icon slot="media" material="videocam"></Icon>
+      </ListItem>
+      <ListItem title="Flexible Rentals">
+        <Icon slot="media" material="credit_card"></Icon>
+      </ListItem>
+      <ListItem title="Anytime, Anywhere">
+        <Icon slot="media" material="public"></Icon>
+      </ListItem>
     </List>
 
-    <BlockTitle>Modals</BlockTitle>
-    <Block className="grid grid-gap">
-      <Button fill popupOpen="#my-popup">Popup</Button>
+    <Block>
+      <p style={{ textAlign: "justify" }}>
+        Rediscover the joy of movie nights with CinemaNow—where every film is a
+        fresh adventure waiting to unfold.
+      </p>
     </Block>
 
-    <BlockTitle>Panels</BlockTitle>
+    <Block>
+      <Button iconMaterial="videocam" fill round raised>
+        Explore now
+      </Button>
+    </Block>
+    {/* <BlockTitle>Modals</BlockTitle>
+    <Block className="grid grid-gap">
+      <Button fill popupOpen="#my-popup">
+        Popup
+      </Button>
+    </Block> */}
+
+    {/* <BlockTitle>Panels</BlockTitle>
     <Block className="grid grid-cols-2 grid-gap">
-      <Button fill panelOpen="left">Left Panel</Button>
-      <Button fill panelOpen="right">Right Panel</Button>
+      <Button fill panelOpen="left">
+        Left Panel
+      </Button>
+      <Button fill panelOpen="right">
+        Right Panel
+      </Button>
     </Block>
 
     <List strong inset dividersIos>
@@ -64,7 +99,7 @@ const HomePage = () => (
         title="Request Data & Load"
         link="/request-and-load/user/123456/"
       />
-    </List>
+    </List> */}
   </Page>
 );
 export default HomePage;
