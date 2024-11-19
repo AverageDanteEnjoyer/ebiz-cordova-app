@@ -7,12 +7,15 @@ import {
   LoginScreenTitle,
   Page,
 } from 'framework7-react';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import passwordValidator from '@/services/password-validator';
 import { api } from '@/utils/api';
 import store from '@/js/store';
+import {MyContext} from "@/js/context.jsx";
 
 const LoginPage = (props) => {
+  const { login } = useContext(MyContext);
+
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
@@ -48,8 +51,8 @@ const LoginPage = (props) => {
           throw new Error('Error status: ' + resp.status);
         }
         const data = await resp.json();
-        await store.dispatch('login', data);
         f7.dialog.alert("Login successful", () => {
+          login(data);
           clearFormData();
           f7.tab.show("#view-home");
         });
