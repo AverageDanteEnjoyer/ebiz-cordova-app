@@ -43,3 +43,6 @@ cordova/www/
 
 # Production build
 www/
+
+# WebStorm files
+.idea/
