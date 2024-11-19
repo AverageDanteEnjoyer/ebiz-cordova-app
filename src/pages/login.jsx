@@ -49,7 +49,10 @@ const LoginPage = (props) => {
         }
         const data = await resp.json();
         await store.dispatch('login', data);
-        clearFormData();
+        f7.dialog.alert("Login successful", () => {
+          clearFormData();
+          f7.tab.show("#view-home");
+        });
       }).catch((error) => {
         console.log(error);
         f7.dialog.alert('An error occurred. Please try again later.');
