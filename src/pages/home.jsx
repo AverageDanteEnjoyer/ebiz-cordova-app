@@ -12,6 +12,7 @@ import {
   ListItem,
   Button,
   Icon,
+  f7,
 } from "framework7-react";
 
 const HomePage = () => (
@@ -59,7 +60,13 @@ const HomePage = () => (
     </Block>
 
     <Block>
-      <Button iconMaterial="videocam" href="/films/" fill round raised>
+      <Button
+        iconMaterial="videocam"
+        onClick={() => f7.tab.show("#view-films")}
+        fill
+        round
+        raised
+      >
         Explore now
       </Button>
     </Block>
