@@ -10,6 +10,7 @@ import NotFoundPage from "../pages/404.jsx";
 import LoginPage from "@/pages/login";
 import RegisterPage from "@/pages/register";
 import FilmsPage from "../pages/films.jsx";
+import RentedPage from "@/pages/rented";
 
 const routes = [
   {
@@ -44,7 +45,10 @@ const routes = [
     path: "/settings/",
     component: SettingsPage,
   },
-
+  {
+    path: "/rented/",
+    component: RentedPage,
+  },
   {
     path: "/dynamic-route/blog/:blogId/post/:postId/",
     component: DynamicRoutePage,

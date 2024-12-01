@@ -93,12 +93,20 @@ const MyApp = () => {
                     />
                     {
                         user ? (
-                            <Link
-                                tabLink="#view-profile"
-                                iconIos="f7:gear"
-                                iconMd="material:perm_identity"
-                                text="Profile"
-                            />
+                            <>
+                                <Link
+                                    tabLink="#view-rented"
+                                    iconIos="f7:film"
+                                    iconMd="material:movie"
+                                    text="Rented Films"
+                                />
+                                <Link
+                                    tabLink="#view-profile"
+                                    iconIos="f7:gear"
+                                    iconMd="material:perm_identity"
+                                    text="Profile"
+                                />
+                            </>
                         ) : (
                             <>
                                 <Link
@@ -123,6 +131,7 @@ const MyApp = () => {
                 <View id="view-register" name="register" tab url="/register/"/>
                 <View id="view-login" name="login" tab url="/login/"/>
                 <View id="view-profile" name="profile" tab url="/profile/"/>
+                <View id="view-rented" name="rented" tab url="/rented/"/>
             </Views>
         </App>
     );
