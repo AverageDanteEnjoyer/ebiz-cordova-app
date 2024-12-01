@@ -9,10 +9,12 @@ async function fetchAPI(
     data?: unknown,
     headers?: HeadersInit
 ) {
+    const user = JSON.parse(sessionStorage.getItem("user"));
+
     return await fetch(`${ApiURL}${url}`, {
         method,
-        credentials: "include",
         headers: headers || {
+            Authorization: user ? `Bearer ${user.token}` : "",
             "Content-Type": "application/json",
         },
         body: data ? JSON.stringify(data) : undefined,
