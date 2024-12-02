@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { api } from '@/utils/api';
 
 const MyContext = createContext(null);
 
@@ -12,7 +13,8 @@ const MyContextProvider = ({ children }) => {
         setUser(userData);
     };
 
-    const logout = () => {
+    const logout = async () => {
+        await api.post("/auth/logout");
         sessionStorage.removeItem('user');
         setUser(null);
     };

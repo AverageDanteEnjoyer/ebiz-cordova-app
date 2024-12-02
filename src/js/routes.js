@@ -11,6 +11,7 @@ import LoginPage from "@/pages/login";
 import RegisterPage from "@/pages/register";
 import FilmsPage from "../pages/films.jsx";
 import RentedPage from "@/pages/rented";
+import EditProfilePage from "@/pages/edit-profile-page";
 
 const routes = [
   {
@@ -52,6 +53,10 @@ const routes = [
   {
     path: "/dynamic-route/blog/:blogId/post/:postId/",
     component: DynamicRoutePage,
+  },
+  {
+    path: "/profile/",
+    component: EditProfilePage,
   },
   {
     path: "/request-and-load/user/:userId/",
