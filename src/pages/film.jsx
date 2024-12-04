@@ -96,7 +96,9 @@ const FilmPage = (props) => {
             <Block>{film.description}</Block>
             <BlockTitle large>Poster</BlockTitle>
             <Block>
-                <img src={film.posterURL} alt={film.name} width={300} height={300}/>
+                {/*<img src={film.posterURL} alt={film.name} width={(screen.width * 0.8)} height={(screen.width * 0.8)} />*/}
+            {/*    align img to center*/}
+                <img src={film.poster} alt={film.name} width={(screen.width * 0.8)} height={(screen.width * 0.8)} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}}/>
             </Block>
             {user && !isFilmRented ? (
                 <Block>
