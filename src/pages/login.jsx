@@ -94,8 +94,6 @@ const LoginPage = (props) => {
         const code = url.searchParams.get('code');
     
         inAppBrowserRef.close();
-        
-        f7.dialog.alert('Authorization code: ' + code);
 
         await api
         .post("/auth/github", {

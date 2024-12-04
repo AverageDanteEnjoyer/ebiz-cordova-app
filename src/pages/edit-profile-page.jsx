@@ -1,9 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Page, Navbar, Block, List, ListInput, Button, f7 } from 'framework7-react';
 import { api } from '@/utils/api';
 import { ApiURL, staticURL } from '../utils/api';
+import { MyContext } from "@/js/context.jsx";
 
 const EditProfilePage = () => {
+  const { user: userContext } = useContext(MyContext);
+
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
@@ -23,7 +26,7 @@ const EditProfilePage = () => {
 
   useEffect(() => {
     fetchUser();
-  }, [fetchUser]);
+  }, [fetchUser, userContext]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
