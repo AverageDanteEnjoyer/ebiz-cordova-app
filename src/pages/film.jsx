@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useContext} from "react";
-import {Page, Navbar, BlockTitle, Block, Button, f7, Popup} from "framework7-react";
+import {Page, Navbar, BlockTitle, Block, Button, f7, Popup, Card} from "framework7-react";
 import {api} from "@/utils/api";
 import {MyContext} from "@/js/context.jsx";
 
@@ -9,6 +9,7 @@ const FilmPage = (props) => {
     const [videoHeight, setVideoHeight] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
     const [film, setFilm] = useState({});
+    const [returnDate, setReturnDate] = useState("");
     const {user} = useContext(MyContext);
     const {newFilmRented} = useContext(MyContext);
 
@@ -42,6 +43,29 @@ const FilmPage = (props) => {
             })
     }
 
+    const getReturnDate = async () => {
+        await api
+            .get(`/films/return-date/${filmId}`)
+            .then(async (resp) => {
+                const res = await resp.text();
+                console.log(res);
+                setReturnDate(res);
+            }
+        )
+    }
+
+    const formatDate = (isoString) => {
+        const date = new Date(isoString);
+        return date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+        });
+    };
+
     const rentFilm = async () => {
         setIsLoading(true);
         await api
@@ -71,6 +95,7 @@ const FilmPage = (props) => {
         fetchFilm();
         if (user) {
             checkIfFilmIsRented();
+            getReturnDate();
         }
         console.log(film.filmURL);
         if (isOpen) {
@@ -97,8 +122,10 @@ const FilmPage = (props) => {
             <BlockTitle large>Poster</BlockTitle>
             <Block>
                 {/*<img src={film.posterURL} alt={film.name} width={(screen.width * 0.8)} height={(screen.width * 0.8)} />*/}
-            {/*    align img to center*/}
-                <img src={film.poster} alt={film.name} width={(screen.width * 0.8)} height={(screen.width * 0.8)} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}}/>
+                {/*    align img to center*/}
+                {/*    <img src={film.poster} alt={film.name} width={(screen.width * 0.8)} height={(screen.width * 0.8)} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}}/>*/}
+                <img src={film.posterURL} alt={film.name} width="300" height="300"
+                     style={{display: "block", marginLeft: "auto", marginRight: "auto"}}/>
             </Block>
             {user && !isFilmRented ? (
                 <Block>
@@ -115,6 +142,12 @@ const FilmPage = (props) => {
                 </Block>
             ) : isFilmRented ? (
                 <Block>
+                    <Card>
+                        <p>
+                            You have rented this film. It will be available until{" "}
+                            {formatDate(returnDate)}.
+                        </p>
+                    </Card>
                     <Button fill round raised onClick={() => setIsOpen(true)}>
                         Watch Film
                     </Button>
