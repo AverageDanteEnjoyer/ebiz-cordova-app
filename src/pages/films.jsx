@@ -49,10 +49,8 @@ const FilmsPage = () => {
   useEffect(() => {
     console.log("Fetching films...");
     if (user) {
-        f7.dialog.alert("Fetching available films");
         fetchAvailableFilms();
     } else {
-        f7.dialog.alert("Fetching all films");
         fetchFilms();
     }
   }, [user, isNewFilmRented]);
